@@ -4,7 +4,7 @@ mkpath(env_path)
 
 # add the `PackageCompilerDebug` package to the `NewSysImageEnv` project
 Pkg.activate(env_path)
-Pkg.add(PackageSpec(path="$(dirname(@__DIR__))", rev="master"))
+Pkg.add(PackageSpec(path="$(dirname(@__DIR__))", rev="play/without-dataframes"))
 
 # create a system image
 using PackageCompiler
