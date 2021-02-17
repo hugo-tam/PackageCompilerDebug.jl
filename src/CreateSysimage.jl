@@ -1,10 +1,10 @@
 # create a new environment folder
-env_path = "$(dirname(dirname(@__DIR__)))/NewSysImageEnv"
+env_path = "$(dirname(pwd()))/NewSysImageEnv"
 mkpath(env_path)
 
 # add the `PackageCompilerDebug` package to the `NewSysImageEnv` project
 Pkg.activate(env_path)
-Pkg.add(PackageSpec(path="$(dirname(@__DIR__))", rev="master"))
+Pkg.add(PackageSpec(path="$(dirname(@__DIR__))"))
 
 # create a system image
 using PackageCompiler
