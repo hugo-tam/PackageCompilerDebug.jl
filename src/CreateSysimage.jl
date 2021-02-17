@@ -1,5 +1,5 @@
 # create a new environment folder
-env_path = "$(dirname(dirname(@__DIR__)))/NewSysImageEnv"
+env_path = "$(dirname(pwd()))/NewSysImageEnv"
 mkpath(env_path)
 
 # add the `PackageCompilerDebug` package to the `NewSysImageEnv` project

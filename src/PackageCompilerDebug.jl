@@ -1,16 +1,13 @@
 module PackageCompilerDebug
 
-using JuMP, Ipopt
+using Gadfly, DataFrames
 
-function ipopt_solve_max_x(x²_bound::Float64)
-    model = Model(optimizer_with_attributes(Ipopt.Optimizer))
-    @variable(model, x)
-    @objective(model, Max, x)
-    @constraint(model, constr1, x * x <= x²_bound)
-    optimize!(model)
-    return value(x)
+function plot_dataframe(full_svg_path::String, df::DataFrame)
+    return draw(SVG(full_svg_path), Gadfly.plot(df, x = :x, y = :y, Geom.point))
 end
 
-export ipopt_solve_max_x
+plot_dataframe(full_svg_path::String, xs::Vector{T}, ys::Vector{T}) where T <: Number = plot_dataframe(full_svg_path, DataFrame(x = xs, y = ys))
+
+export plot_dataframe
 
 end # module
