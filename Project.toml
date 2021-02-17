@@ -1,7 +1,7 @@
 name = "PackageCompilerDebug"
 uuid = "a48c22a1-7258-4135-befe-04efb0532d7a"
 authors = ["hugo-tam <hugo.ch.tam@gmail.com>"]
-version = "0.2.0"
+version = "0.2.1"
 
 [deps]
 Gadfly = "c91e804a-d5a3-530f-b6f0-dfbca275c004"
